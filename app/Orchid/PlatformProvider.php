@@ -34,7 +34,12 @@ class PlatformProvider extends OrchidServiceProvider
     public function menu(): array
     {
         return [
-            Menu::make('Get Started')
+            Menu::make('Clients')
+                ->icon('user')
+                ->title('Clients')
+                ->route('platform.clients'),
+
+            /*Menu::make('Get Started')
                 ->icon('bs.book')
                 ->title('Navigation')
                 ->route(config('platform.index')),
@@ -42,17 +47,17 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Example Screen')
                 ->icon('bs.collection')
                 ->route('platform.example')
-                ->badge(fn () => 6),
+                ->badge(fn() => 6),
 
             Menu::make('Form Elements')
                 ->icon('bs.journal')
                 ->route('platform.example.fields')
-                ->active('*/form/examples/*'),
+                ->active('form/examples'),
 
             Menu::make('Overview Layouts')
                 ->icon('bs.columns-gap')
                 ->route('platform.example.layouts')
-                ->active('*/layout/examples/*'),
+                ->active('layout/examples'),
 
             Menu::make('Charts')
                 ->icon('bs.bar-chart')
@@ -85,7 +90,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.box-arrow-up-right')
                 ->url('https://github.com/orchidsoftware/platform/blob/master/CHANGELOG.md')
                 ->target('_blank')
-                ->badge(fn () => Dashboard::version(), Color::DARK),
+                ->badge(fn() => Dashboard::version(), Color::DARK),*/
         ];
     }
 
