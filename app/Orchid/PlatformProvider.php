@@ -34,6 +34,12 @@ class PlatformProvider extends OrchidServiceProvider
     public function menu(): array
     {
         return [
+
+            Menu::make('Points')
+                ->icon('bag')
+                ->title('Points')
+                ->route('platform.point')->divider(),
+
             Menu::make('Clients')
                 ->icon('user')
                 ->title('Clients')
