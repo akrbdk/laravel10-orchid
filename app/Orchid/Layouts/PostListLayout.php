@@ -4,6 +4,7 @@ namespace App\Orchid\Layouts;
 
 use App\Models\Post;
 use Orchid\Screen\Actions\Link;
+use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
 
@@ -27,7 +28,7 @@ class PostListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('title', 'Title')
+            TD::make('title', 'Title')->sort()->filter(TD::FILTER_TEXT)
                 ->render(function (Post $post) {
                     return Link::make($post->title)->route('platform.post.edit', $post);
                 }),
